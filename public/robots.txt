@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://naqibmhtd.vercel.app/sitemap.xml

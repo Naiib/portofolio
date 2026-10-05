@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── CSS Variables ── */
+:root {
+  --background: #ffffff;
+  --foreground: #0f172a;
+}
+.dark {
+  --background: #020817;
+  --foreground: #f1f5f9;
+}
+
+/* ── Base Resets ── */
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  /* Offset for fixed navbar */
+  scroll-padding-top: 72px;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', 'SF Pro Display', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+
+/* ── Text selection ── */
+::selection {
+  background: #c4d4ff;
+  color: #1a2234;
+}
+.dark ::selection {
+  background: #1a3ef5;
+  color: #f1f5f9;
+}
+
+/* ── Focus rings ── */
+:focus-visible {
+  outline: 2px solid #2d5aff;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: #c4d4ff;
+  border-radius: 10px;
+}
+.dark ::-webkit-scrollbar-thumb { background: #2d5aff; }
+
+/* ── Dot grid pattern ── */
+.dot-pattern {
+  background-image: radial-gradient(circle, #c4d4ff 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+.dark .dot-pattern {
+  background-image: radial-gradient(circle, rgba(45, 90, 255, 0.18) 1px, transparent 1px);
+}
+
+/* ── Keyframe animations ── */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes growUp {
+  from { height: 0; }
+  to   { height: var(--bar-height); }
+}
+
+/* ── Tailwind layer: utilities ── */
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+
+  .animate-delay-100 { animation-delay: 100ms; }
+  .animate-delay-200 { animation-delay: 200ms; }
+  .animate-delay-300 { animation-delay: 300ms; }
+  .animate-delay-400 { animation-delay: 400ms; }
+  .animate-delay-500 { animation-delay: 500ms; }
+  .animate-delay-600 { animation-delay: 600ms; }
+
+  .animate-fade-in  { animation: fadeIn  0.6s ease-out both; }
+  .animate-fade-up  { animation: fadeUp  0.7s ease-out both; }
+  .animate-slide-in { animation: slideInLeft 0.5s ease-out both; }
+}
+
+/* ── Tailwind layer: components ── */
+@layer components {
+  .metric-card {
+    @apply relative overflow-hidden rounded-2xl border p-5
+           bg-white dark:bg-slate-800/60
+           border-slate-200 dark:border-slate-700/60
+           backdrop-blur-sm;
+  }
+
+  .section-label {
+    @apply inline-block text-xs font-bold tracking-[0.18em] uppercase
+           text-navy-600 dark:text-teal-400;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-extrabold
+           text-slate-900 dark:text-slate-50
+           leading-tight tracking-tight;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300
+           hover:shadow-lg hover:-translate-y-1;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-navy-700 to-teal-600
+           dark:from-navy-300 dark:to-teal-400
+           bg-clip-text text-transparent;
+  }
+}
+
+/* ── Print styles ── */
+@media print {
+  header, footer, .scroll-ui, button { display: none !important; }
+  body { background: white; color: black; }
+  section { page-break-inside: avoid; }
+  a[href]::after { content: " (" attr(href) ")"; font-size: 11px; color: #555; }
+}

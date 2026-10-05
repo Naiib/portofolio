@@ -134,6 +134,37 @@ body {
   }
 }
 
+/* Restrained elevation for project panels; motion only on hover-capable devices. */
+.project-card {
+  border-radius: 1rem;
+  box-shadow: 0 1px 3px rgb(15 23 42 / 8%), 0 4px 12px rgb(15 23 42 / 4%);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease;
+}
+
+.dark .project-card {
+  box-shadow: 0 1px 3px rgb(0 0 0 / 20%), 0 4px 12px rgb(0 0 0 / 12%);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .project-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgb(15 23 42 / 10%), 0 3px 8px rgb(15 23 42 / 5%);
+  }
+
+  .dark .project-card:hover {
+    box-shadow: 0 8px 20px rgb(0 0 0 / 28%), 0 3px 8px rgb(0 0 0 / 16%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card {
+    transition: none;
+  }
+}
+
 /* ── Print styles ── */
 @media print {
   header, footer, .scroll-ui, button { display: none !important; }

@@ -83,7 +83,7 @@ export default function Contact() {
       <div className="max-w-6xl mx-auto relative">
 
         {/* Header */}
-        <AnimatedSection>
+        <AnimatedSection className="min-w-0">
           <div className="text-center mb-14">
             <p className="section-label mb-3">Let&apos;s Connect</p>
             <h2 className="section-title">
@@ -99,7 +99,7 @@ export default function Contact() {
         <div className="grid lg:grid-cols-2 gap-10 items-start">
 
           {/* ── Left: Contact links + CTA ── */}
-          <AnimatedSection>
+          <AnimatedSection className="min-w-0">
             <div className="space-y-3 mb-8">
               {contactLinks.map((c, i) => (
                 <a key={i} href={c.href}
@@ -140,7 +140,7 @@ export default function Contact() {
           </AnimatedSection>
 
           {/* ── Right: Contact form ── */}
-          <AnimatedSection delay={150}>
+          <AnimatedSection className="min-w-0" delay={150}>
             <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-7 shadow-sm">
               <h3 className="font-bold text-slate-900 dark:text-slate-50 text-lg mb-5 flex items-center gap-2">
                 <span className="h-5 w-1 rounded bg-gradient-to-b from-navy-600 to-teal-500" />

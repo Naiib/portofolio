@@ -113,7 +113,7 @@ export default function Education() {
         {/* Cards */}
         <div className="grid md:grid-cols-2 gap-6 mb-14">
           {education.map((item, i) => (
-            <AnimatedSection key={item.title} delay={i * 150}>
+            <AnimatedSection key={item.title} className="min-w-0" delay={i * 150}>
               <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden card-hover h-full flex flex-col">
                 {/* Top gradient bar */}
                 <div className={`h-1 bg-gradient-to-r ${item.color}`} />

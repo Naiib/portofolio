@@ -109,7 +109,7 @@ export default function CaseStudy() {
         <AnimatedSection delay={150}>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-10">
             {processSteps.map((p) => (
-              <div key={p.step} className="bg-slate-50 dark:bg-slate-900/60 rounded-xl border border-slate-200 dark:border-slate-800 p-4 hover:shadow-sm transition-shadow">
+              <div key={p.step} className="project-card bg-slate-50 dark:bg-slate-900/60 rounded-xl border border-slate-200 dark:border-slate-800 p-4">
                 <div className="flex items-center gap-2.5 mb-2">
                   <span className={`h-6 w-6 rounded-md ${p.color} text-white text-xs font-black flex items-center justify-center flex-shrink-0`}>{p.step}</span>
                   <span className="text-sm font-bold text-slate-800 dark:text-slate-100">{p.title}</span>
@@ -124,8 +124,8 @@ export default function CaseStudy() {
         <div className="grid lg:grid-cols-5 gap-6">
 
           {/* STAR Report */}
-          <AnimatedSection className="lg:col-span-3" delay={200}>
-            <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden h-full flex flex-col">
+          <AnimatedSection className="min-w-0 lg:col-span-3" delay={200}>
+            <div className="project-card bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden h-full flex flex-col">
               {/* Header bar */}
               <div className="bg-gradient-to-r from-navy-700 to-navy-800 px-6 py-4 flex items-center justify-between flex-shrink-0">
                 <div>
@@ -179,11 +179,11 @@ export default function CaseStudy() {
           </AnimatedSection>
 
           {/* Charts panel */}
-          <AnimatedSection className="lg:col-span-2" delay={300}>
+          <AnimatedSection className="min-w-0 lg:col-span-2" delay={300}>
             <div className="space-y-4 h-full flex flex-col">
 
               {/* Bar chart */}
-              <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-5 flex-1">
+              <div className="project-card bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-5 flex-1">
                 <div className="flex items-center justify-between mb-4">
                   <div>
                     <p className="text-[11px] text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wide">Monthly Orders</p>
@@ -202,7 +202,7 @@ export default function CaseStudy() {
               </div>
 
               {/* Retention donut */}
-              <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-5">
+              <div className="project-card bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-5">
                 <p className="text-[11px] text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wide mb-3">Customer Retention Split</p>
                 <div className="flex items-center gap-5">
                   <RetentionDonut />
@@ -221,7 +221,7 @@ export default function CaseStudy() {
               </div>
 
               {/* Tech stack */}
-              <div className="bg-gradient-to-br from-navy-700 to-navy-900 rounded-2xl p-5">
+              <div className="project-card bg-gradient-to-br from-navy-700 to-navy-900 rounded-2xl p-5">
                 <p className="text-navy-300 text-[10px] font-semibold mb-3 uppercase tracking-widest">Tech Stack</p>
                 <div className="flex flex-wrap gap-2">
                   {["Python", "Pandas", "Matplotlib", "Seaborn", "SQL", "Power BI", "Jupyter", "DAX"].map((t) => (
@@ -243,7 +243,7 @@ export default function CaseStudy() {
 
 function MetricCard({ metric, barData, maxBar }: { metric: typeof metrics[0]; barData: number[]; maxBar: number }) {
   return (
-    <div className="metric-card card-hover group">
+    <div className="metric-card project-card group">
       <div className="flex items-start justify-between mb-3">
         <div className={`h-9 w-9 rounded-xl bg-gradient-to-br ${metric.color} flex items-center justify-center text-white shadow-sm`}>
           <svg className="w-4.5 h-4.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.8}>

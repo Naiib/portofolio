@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="828" viewBox="0 0 1200 828" fill="none">
+  <defs>
+    <linearGradient id="background" x1="84" y1="70" x2="1090" y2="780" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#10272D"/>
+      <stop offset="1" stop-color="#07171D"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="785" y1="135" x2="1115" y2="718" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#78D5C7" stop-opacity=".68"/>
+      <stop offset="1" stop-color="#78D5C7" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#background)" d="M0 0h1200v828H0z"/>
+  <circle cx="1035" cy="210" r="217" stroke="url(#accent)" stroke-width="1.5"/>
+  <circle cx="1035" cy="210" r="157" stroke="#78D5C7" stroke-opacity=".16"/>
+  <path d="M865 828c41-165 127-292 335-388" stroke="#78D5C7" stroke-opacity=".2" stroke-width="1.5"/>
+  <path d="M0 710c250-116 452-143 664-80" stroke="#78D5C7" stroke-opacity=".12"/>
+  <path d="M84 94h48" stroke="#78D5C7" stroke-width="3"/>
+  <text x="84" y="146" fill="#AFC9C7" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="600" letter-spacing="4">CREATIVE MEDIA DEPARTMENT</text>
+  <text x="84" y="405" fill="#F1F4F2" font-family="Arial, Helvetica, sans-serif" font-size="104" font-weight="600" letter-spacing="-5">Brand</text>
+  <text x="84" y="520" fill="#F1F4F2" font-family="Arial, Helvetica, sans-serif" font-size="104" font-weight="600" letter-spacing="-5">Guideline</text>
+  <path d="M84 575h96" stroke="#78D5C7" stroke-width="3"/>
+  <text x="84" y="625" fill="#AFC9C7" font-family="Arial, Helvetica, sans-serif" font-size="19" letter-spacing="1">HIMTI · UIN JAKARTA</text>
+  <text x="84" y="770" fill="#AFC9C7" fill-opacity=".72" font-family="Arial, Helvetica, sans-serif" font-size="13" letter-spacing="3">VISUAL IDENTITY SYSTEM</text>
+</svg>
